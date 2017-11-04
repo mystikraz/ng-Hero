@@ -10,6 +10,10 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var hero_detail_component_1 = require("./hero-detail.component");
+var heroes_component_1 = require("./heroes.component");
+var Hero_Service_1 = require("./Hero.Service");
+var dashboard_component_1 = require("./dashboard.component");
+var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,10 +23,19 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            app_routing_module_1.AppRoutingModule
         ],
-        declarations: [app_component_1.AppComponent, hero_detail_component_1.HeroDetailComponent],
-        bootstrap: [app_component_1.AppComponent]
+        declarations: [
+            app_component_1.AppComponent,
+            hero_detail_component_1.HeroDetailComponent,
+            heroes_component_1.HeroesComponent,
+            dashboard_component_1.DashboardComponent
+        ],
+        bootstrap: [app_component_1.AppComponent],
+        providers: [
+            Hero_Service_1.HeroService
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;
